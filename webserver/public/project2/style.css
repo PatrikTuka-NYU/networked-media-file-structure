@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background-color: white;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+}
+
+.indicator {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.inactive {
+    background-color: lightgray;
+}
+
+.active {
+    background-color: cornflowerblue;
+}
+
+.marker {
+    width: 50px;
+    height: 100px;
+
+    position: absolute;
+    left: 23px;
+    top: -23px;
+}
+
+.inactive .marker {
+    border-left: 4px solid lightgray;
+}
+
+.active .marker {
+    border-left: 4px solid cornflowerblue;
+}
