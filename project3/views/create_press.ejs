@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <title>Create a New Press</title>
+    <link rel="stylesheet" href="styling/intro.css">
+</head>
+<body>
+    <div class="create_container">
+
+        <h1>Create a new press</h1>
+
+        <br>
+
+        <form method="GET" action="/create_request">
+
+            <div class="sub_container">
+                <div class="generic">
+                    <input type="text" name="press_name" placeholder="Press Name" maxlength="100" required>
+                    <input type="password" name="entrance_code" placeholder="Entrance Code (password)" required>
+                </div>    
+            </div>
+            
+            <div class="sub_container">
+                <h3>Recurrence:</h3>
+                <div class="radio">
+                    <div class="radio_element">                
+                        <input type="radio" name="recurrence" id="weekly" value="weekly" required>
+                        <label for="weekly">weekly</label>
+                    </div>
+        
+                    <div class="radio_element">
+                        <input type="radio" name="recurrence" id="monthly" value="monthly" checked>
+                        <label for="monthly">monthly</label>
+                    </div>
+
+                    <div class="radio_element">
+                        <input type="radio" name="recurrence" id="yearly" value="yearly">
+                        <label for="yearly">yearly</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub_container">
+                <h3>First Issue To Be Released On:</h3>
+                <input type="date" id="first_release" name="first_release" required>
+            </div>
+
+            <div class="sub_container">
+                <h3>Question Types:</h3>
+                <div class="radio">
+                    <div class="radio_element">
+                        <input type="checkbox" id="check_in" value="check_in" name="question_types" checked>
+                        <label for="check_in">Check In</label>
+                    </div>
+    
+                    <div class="radio_element">
+                        <input type="checkbox" id="relationships" value="relationships" name="question_types">
+                        <label for="relationships">Relationship</label>
+                    </div>
+        
+                    <div class="radio_element">
+                        <input type="checkbox" id="self_reflection" value="self_reflection" name="question_types">
+                        <label for="self_reflection">Self Reflection</label>
+                    </div>
+        
+                    <div class="radio_element">
+                        <input type="checkbox" id="random" value="random" name="question_types">
+                        <label for="random">Random</label>
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="Create press">
+
+        </form>
+
+    </div>
+
+    <script>
+        const date = new Date();
+
+        let day = date.getDate();
+        let month = date.getMonth() +1;
+        let year = date.getFullYear();
+
+        let dateString = `${year}-${month}-${day}`
+
+        const first_release = document.getElementById('first_release');
+        first_release.setAttribute('min', dateString);
+
+    </script>
+
+</body>
+</html>

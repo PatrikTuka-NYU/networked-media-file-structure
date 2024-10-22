@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    background-color: black;
+    background-image: url(../assets/background.png);
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+h1 {
+    color: white;
+    text-decoration: none;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+
+    margin-bottom: 50px;
+
+}
+
+/* INDEX PAGE ---------------------------------------------------- */
+
+#logo, .create_or_join_buttons {
+    width: 500px;
+}
+
+.create_or_join_buttons 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.create_or_join_buttons a {
+    padding: 20px 30px;
+
+    border: 1.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.10);
+    transition: background-color 0.5s;
+    backdrop-filter: blur(2.5px);
+
+    color: white;
+    text-decoration: none;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.create_or_join_buttons a:hover {
+    background: rgba(255, 255, 255, 0.20);
+    transition: background-color 0.5s;
+}
+
+/* JOIN PAGE ---------------------------------------------------- */
+
+.join_container {
+    border: 1.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.10);
+    transition: background-color 0.5s;
+    backdrop-filter: blur(2.5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 100px 200px;
+}
+
+.join_container form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.join_container form input {
+
+    width: 300px;
+    height: 50px;
+
+    border: 1.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(2.5px);
+
+    color: white;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 10px;
+}
+
+.join_container form input[type="submit"] {
+    background: rgba(255, 255, 255, 1);
+    color: #2D2D2D;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+/* CREATE PAGE ---------------------------------------------------- */
+
+.create_container {
+    border: 1.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.10);
+    transition: background-color 0.5s;
+    backdrop-filter: blur(2.5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 20px 100px;
+}
+
+.create_container form {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sub_container {
+    width: 100%;
+}
+
+h3 {
+    color: white;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.create_container form input[type="text"], input[type="password"],  input[type="date"] {
+
+    width: 300px;
+    height: 50px;
+
+    border: 1.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(2.5px);
+
+    color: white;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 10px;
+}
+
+.create_container form .generic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+
+    width: 100%;
+}
+
+
+.create_container form .radio {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    max-width: 500px;
+}
+
+.create_container form .radio h3 {
+    color: white;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 9000;
+}
+
+.create_container form .radio_element {
+    width: 150px;
+    height: 50px;
+
+    border: 1.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(2.5px);
+
+    color: white;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+
+.create_container form input[type="submit"] {
+    width: 300px;
+    height: 50px;
+
+    border: 1.5px solid #FFF;
+    background: rgba(255, 255, 255, 1);
+    color: #2D2D2D;
+    font-family: Syne, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-top: 20px;
+}
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%=dataPacket.press_name%> - Issue No. <%=dataPacket.issue_number%></title>
+    <link rel="stylesheet" href="/styling/issue.css">
+</head>
+<body>
+
+    <div class="main_container">
+        <h2>Issue No. <%=dataPacket.issue_number%></h2>
+        <h1><%=dataPacket.press_name%> Publishing</h1>
+        <hr><hr>
+        <div class="issue_head">
+            <p><b>Created by: </b><%=dataPacket.contributors.join(', ')%></p>
+            <p><%=dataPacket.release_date%></p>
+        </div>
+
+        <hr>
+        <br>
+
+        <% for(let i = 0; i < dataPacket.questions.length; i++) { %>
+            <h4><%=dataPacket.questions[i].question_type%></h4>
+            <h3><%=dataPacket.questions[i].question_prompt%></h3>
+
+            <div class="answers">
+                <% for(let j = 0; j < dataPacket.answers.length; j++) { %>
+                    <p><b><%=dataPacket.answers[j].contributor%>: </b><%=dataPacket.answers[j].responses[i]%></p>
+                <% } %>
+            </div>
+
+            <br>
+        <% } %>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    background-color: beige;
+    color: #2D2D2D;
+
+    font-family: "Noticia Text", 'Times New Roman', Times, serif;
+}
+
+.main_container {
+    max-width: 900px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 20px;
+
+    max-width: 570px;
+}
+
+.issue-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h4 {
+    color: #FCFDF4;
+    background-color: #2D2D2D;
+    font-size: 16px;
+    font-weight: 700;
+
+    padding: 5px 10px;
+    width: fit-content;
+
+    margin: 0px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 2px;
+}
+
+.answers p {
+    background-color: #EEEBCF;
+    padding: 15px 20px;
+}
+
+label {
+    padding-right: 10px;
+}
+
+input {
+    background-color: #EEEBCF;
+    border: none;
+    margin: 15px 0px;
+    height: 50px;
+    width: 450px;
+    padding: 0px 20px;
+    font-size: 16px;
+    font-family: "Noticia Text", 'Times New Roman', Times, serif;
+}
+
+#submit_response {
+    color: #FCFDF4;
+    background-color: #2D2D2D;
+    font-size: 16px;
+    font-weight: 700;
+    width: 270px;
+}
+
+#back_to_press {
+    color: #FCFDF4;
+    background-color: #2D2D2D;
+
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+
+
+    padding: 15px 25px;
+}
+
+#submit_response_button {
+    color: #FCFDF4;
+    background-color: #2D2D2D;
+
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+
+
+    padding: 15px 25px;
+}
+
+button {
+    color: #FCFDF4;
+    background-color: #2D2D2D;
+    font-size: 16px;
+    font-weight: 500;
+
+    padding: 5px 10px;
+
+    margin: 0px;
+
+    border: none;
+
+    position: relative;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.icon {
+    color: white;
+}
+
+.material-symbols-outlined { 
+    font-size: 16px !important;
+    color: white;
+    position: relative;
+    top: 1.5px;
+}
+
+.issue_group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #EEEBCF;
+
+    margin-top: 20px;
+    padding: 10px 20px;
+}

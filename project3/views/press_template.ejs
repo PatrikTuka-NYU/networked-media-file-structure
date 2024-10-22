@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <title> <%= press_name %> HQ </title>
+    <link rel="stylesheet" href="/styling/issue.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=content_copy" />
+</head>
+<body>
+    <div class="main_container">
+
+        <button onclick="copyID()">
+            <span class="material-symbols-outlined">content_copy</span>
+            <span><%= press_id %></span>
+        </button>
+    
+        <h1>Welcome to the HQ of <%= press_name %></h1>
+
+        <hr> <hr>
+        <div class="new_release_container issue-head">
+            <p><b>Submit your response to the upcoming release:</b> <%= new_release_date %></p>
+            <p></p>
+            <a href="/press/<%=press_id%>/submit-response" id="submit_response_button">Write Response</a>
+        </div>
+        <hr>
+    
+     
+        <h2>All Previous Issues</h2>
+    
+        <div class="previous_issues">
+            <% for(let i = 0; i < past_issues.length; i++) { %>
+                <div class="issue_group">
+                    <p><b>Issue <%=past_issues[i].issue_number%></b></p>
+                    <p><%=past_issues[i].issue_date.toLocaleString().split(',')[0] %></p>
+                    <a href="/press/<%=press_id%>/issue/<%=i%>">Read this issue</a>
+                </div>
+            <% } %>
+    
+        </div>
+    
+    </div>
+
+    <script>
+        function copyID() {
+            navigator.clipboard.writeText("<%= press_id %>");
+            alert("Press ID copied to clipboard!");
+        }
+    </script>
+
+</body>
+</html>

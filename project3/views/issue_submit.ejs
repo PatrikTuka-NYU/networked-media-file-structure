@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <title><%=press_name%> - Submit Response for Issue <%=issue_number%></title>
+    <link rel="stylesheet" href="/styling/issue.css">
+</head>
+<body>
+
+    <div class="main_container">
+        <h2><%=press_name%> | <%=issue_date%></h2>
+        <h1>Submit Your Response for Issue No. <%=issue_number%> </h2>
+        <form method="GET" action="/press/<%=press_id%>/process_answers">
+    
+            <hr> <hr>
+            <div class="issue-head">
+                <div>
+                    <b><label for="contributor">Contributor's name:</label></b>
+                    <input type="text" name="contributor" id="contributor" required>
+                </div>
+                <input type="submit" id="submit_response" value="Submit your response">
+            </div>
+            <hr>
+            <br>
+    
+            <% for(let i = 0; i < questions.length; i++) { %>
+                <br>
+                <h4><%=questions[i].question_type%></h4>
+                <h3><%=questions[i].question_prompt%></h3>
+    
+                <input type="text" name="<%=questions[i].question_type%>" id="" required>
+                <br>
+    
+            <% } %>
+    
+
+        </form>
+    </div>
+
+</body>
+</html>
