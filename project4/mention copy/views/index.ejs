@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Mastadon - Mention</title>
+  </head>
+  <body>
+    <h1>Create Inputs for Response Database</h1>
+
+    <h3>Upload a new response:</h3>
+    <hr>
+    <form method="GET" action="/upload">
+      <input id="response_input" type="response_input" name="response_input" placeholder="Say something..." />
+
+      <input type="submit" name="submitbutton" value="Submit" />
+    </form>
+    <br>
+
+    <h3>View all responses so far:</h3>
+    <hr>
+      <% responses.forEach( (response) => { %>
+      <div class="response">
+        <a href="/response/<%=response._id%>">
+          <span class="date"><%= response.date %></span>
+          <p class="response-text"><%= response.text %></p>
+        </a>
+        <br>
+      </div>
+      <% }) %>
+    <br>
+  </body>
+</html>
