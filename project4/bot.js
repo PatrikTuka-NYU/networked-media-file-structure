@@ -16,25 +16,15 @@ async function makeStatus(text) {
 }
 
 async function queryAPI() {
-
-    let currentDate = new Date()
-    console.log(currentDate);
-
-    const params = {
-        month: currentDate.getMonth() + 1,
-        day: currentDate.getDate(),
-        type: "date"
-    }
-
-    return await fetch(`http://numbersapi.com/${params.month}/${params.day}/${params.type}?json`)
+    return await fetch(`http://numbersapi.com/random/trivia?json`)
     .then(response => response.json())
     .then(data => {return data.text})
 }
 
 async function controller() {
     var fact = await queryAPI();
-    makeStatus("[!FUN FACT!]: " + fact);
+    makeStatus("[ ! YOUR (hopefully SFW) DAILY NUMBER FUN FACT ! ]: " + fact);
 }
 
 controller();
-setInterval(controller, 1000 * 60 * 60 * 24);
+setInterval(controller, 1000 * 60 * 15);
