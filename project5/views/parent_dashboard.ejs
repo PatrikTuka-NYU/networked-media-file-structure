@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <title><%=child_name%>'s Journal</title>
+    <link rel="stylesheet" href="/../stylesheets/parent_dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=logout"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="buttons">
+        <a href="/logout" class="button">
+          <span class="material-symbols-outlined icon">logout</span>
+          <span>Logout</span>
+        </a>
+        <a href="/child/<%=id%>/" class="button">
+          <span>Child Pages</span>
+        </a>
+
+        <span class="special-button button">
+          <span class="unselectable">Secret Key:</span>
+          <i><%=secret_key%></i></span
+        >
+      </div>
+
+      <label for="actions">Add a new entry</label>
+      <div id="actions">
+        <a href="/parent/<%=id%>/create-entry" class="action-button"
+          >Create New Entry</a
+        >
+        <a href="/parent/<%=id%>/inspiration" class="action-button"
+          >Inspirational Promt</a
+        >
+      </div>
+
+      <label for="entries">Previous entries</label>
+      <div id="entries">
+        <% for(let i = 0; i < entries.length; i++) { %>
+        <div class="entry">
+          <p><b><%=entries[i].entry_title%></b> | <%=entries[i].entry_date%></p>
+          <a href="/parent/<%=id%>/view_entries/letter-<%=i%>">View Entry</a>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

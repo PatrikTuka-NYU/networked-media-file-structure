@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <title>Unlock Your Journal!</title>
+    <link rel="stylesheet" href="../../stylesheets/child_unlock.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward"
+    />
+  </head>
+  <body>
+    <form action="/child/unlock/<%=id%>" method="POST">
+      <input
+        type="password"
+        name="secret_code"
+        placeholder="Put Your Secret Code Here"
+      />
+      <button type="submit" name="submit">
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </button>
+    </form>
+  </body>
+</html>

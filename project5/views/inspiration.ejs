@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <title>Inspirational Prompt Generator</title>
+    <link rel="stylesheet" href="../../stylesheets/inspiration.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back"
+    />
+  </head>
+  <body>
+    <% let all_questions = [] all_quotes.forEach(entry => { let category =
+    entry.name; entry.questions.forEach(question => {
+    all_questions.push({category, question}); }) }); let chosen_id =
+    Math.floor(Math.random() * all_questions.length); %>
+
+    <div class="container">
+      <a href="/parent/<%=id%>/" class="button back-button">
+        <span class="material-symbols-outlined icon">arrow_back</span>
+        <span>Back to Home</span>
+      </a>
+
+      <div class="card">
+        <p id="category-p"><%=all_questions[chosen_id].category%></p>
+        <p id="quote-p">
+          <%=all_questions[chosen_id].question.replace("your child",
+          child_name)%>
+        </p>
+      </div>
+
+      <div class="buttons">
+        <button id="new-button" class="button">New Prompt</button>
+        <a href="/parent/<%=id%>/create-entry" class="button">Start Writing</a>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // Pass the all_questions array from EJS to JavaScript on the client side
+    const all_questions = <%- JSON.stringify(all_questions) %>;
+
+    const categoryElement = document.getElementById("category-p");
+    const quoteElement = document.getElementById("quote-p");
+
+    // Set up the event listener for the button
+    const button = document.getElementById("new-button");
+    button.addEventListener("click", myFunction);
+
+    // Function to generate a new random question
+    function myFunction() {
+        let chosen_id = Math.floor(Math.random() * all_questions.length);
+        categoryElement.textContent = all_questions[chosen_id].category;
+        quoteElement.textContent = all_questions[chosen_id].question;
+    }
+  </script>
+</html>

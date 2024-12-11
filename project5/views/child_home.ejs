@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <title><%=child_name%>'s Journal</title>
+    <link rel="stylesheet" href="/../../stylesheets/child_home.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=logout"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <a href="/logout" class="button">
+        <span class="material-symbols-outlined icon">logout</span>
+        <span>Logout</span>
+      </a>
+
+      <h1>Dear <%=child_name%>,</h1>
+      <p>
+        This journal is a collection of memories, thoughts, and stories from
+        your childhood, written with love and care as you grow. It’s a time
+        capsule of the moments that shaped you, the lessons learned, and the joy
+        you’ve brought into our lives. One day, when you turn 18, we hope these
+        pages remind you of just how special you are and how much you’ve always
+        been loved.
+      </p>
+
+      <hr />
+
+      <div class="letter-container">
+        <% for(let i = 0; i < entries.length; i++) { %>
+        <a href="/child/<%=id%>/view-letter/letter-<%=i%>" class="letter">
+          <span class="letter-date"> <%=entries[i].entry_date%> </span>
+        </a>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

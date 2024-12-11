@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <title>Parental Login</title>
+    <link rel="stylesheet" href="../../stylesheets/parent_login.css" />
+  </head>
+  <body>
+    <div class="image-container">
+      <img src="../assets/logo_column.svg" alt="" />
+    </div>
+    <div class="form-container" a>
+      <form action="/parent/login" method="POST" autocomplete="off">
+        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="text"
+          name="child_name"
+          placeholder="Child's Name"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Log In</button>
+      </form>
+      <a href="/parent/signup">Sign Up / Register</a>
+    </div>
+  </body>
+</html>

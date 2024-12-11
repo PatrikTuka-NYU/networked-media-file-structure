@@ -1,0 +1,111 @@
+<html lang="en">
+  <head>
+    <title>Create New Entry</title>
+    <link rel="stylesheet" href="../../stylesheets/create_entry.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="buttons">
+        <a href="/parent/<%=id%>" class="button">
+          <span>Discard Entry</span>
+        </a>
+
+        <button
+          type="submit"
+          value="Save Entry"
+          class="button main-button"
+          id="submit-button"
+        >
+          <span>Save Letter</span>
+        </button>
+      </div>
+
+      <div class="letter">
+        <label for="entry_title">Title of the letter</label>
+        <input
+          id="entry_title"
+          autocomplete="off"
+          type="text"
+          name="entry_title"
+          placeholder="Your First Day at the Brooklyn Zoo"
+          required
+        />
+
+        <label for="entry_body">Body of the letter</label>
+        <textarea
+          id="entry_body"
+          autocomplete="off"
+          name="entry_body"
+          placeholder="Lorem Ipsum..."
+          rows="10"
+          required
+        ></textarea>
+
+        <label for="photos">Related photos</label>
+        <div class="photos" id="photos">
+          <div id="dropzone">Drag and Drop Your Photos Here</div>
+          <div id="dropqueue"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // creating global variables
+      let form = new FormData();
+      let all_images = [];
+
+      // handling default browser functions
+      let dropZone = document.getElementById("dropzone");
+      dropZone.addEventListener("dragenter", (e) => {
+        e.preventDefault();
+      });
+      dropZone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+      });
+
+      //managing dropping action (adding elements to all_images)
+      dropZone.addEventListener("drop", async (e) => {
+        e.preventDefault();
+
+        let files = e.dataTransfer.files;
+
+        let arrFiles = [...files];
+        form.append("file", arrFiles[0]);
+
+        all_images.push(e.dataTransfer.files[0].name);
+
+        let image_tag = document.createElement("p");
+        image_tag.innerHTML = e.dataTransfer.files[0].name;
+        document.getElementById("dropqueue").appendChild(image_tag);
+      });
+
+      //handling the post method
+      let button = document.getElementById("submit-button");
+      button.addEventListener("click", async function () {
+        let title_data = document.getElementById("entry_title").value;
+        let body_data = document.getElementById("entry_body").value;
+
+        form.append("entry_title", title_data);
+        form.append("entry_body", body_data);
+
+        await fetch("/parent/<%=id%>/add-entry", {
+          method: "POST",
+          body: form
+        })
+          .then((response) => {
+            if (response.ok) {
+              // Redirect the user to the parent dashboard after successful submission
+              window.location.href = `/parent/<%=id%>/`;
+            } else {
+              console.error("Error uploading entry:", response.status);
+              alert("Failed to save the entry. Please try again.");
+            }
+          })
+          .catch((err) => {
+            console.error("Fetch error:", err);
+            alert("An error occurred. Please try again.");
+          });
+      });
+    </script>
+  </body>
+</html>

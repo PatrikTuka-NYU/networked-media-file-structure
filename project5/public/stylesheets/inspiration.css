@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@400..700&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+
+  background-color: #f9f2e9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 950px;
+  margin: auto;
+}
+
+h1 {
+  font-family: "Caveat Brush", cursive;
+  color: #3c2c17;
+
+  font-size: 56px;
+  line-height: 56px;
+
+  margin: 0px;
+  margin-top: 30px;
+}
+
+p {
+  font-family: "Caveat", cursive;
+  color: #3c2c17;
+
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 500;
+
+  margin: 0px;
+  margin-top: 10px;
+}
+
+hr {
+  color: #594838;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.button {
+  width: fit-content;
+  padding: 12px 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+
+  border-radius: 12px;
+  border: 2px solid #e8d7b9;
+  background-color: white;
+  box-shadow: 0px 18px 30px 0px rgba(186, 172, 147, 0.11);
+
+  text-decoration: none;
+  color: #3c2c17;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  transition: background-color 1s;
+}
+
+.button:hover {
+  background-color: #e8d7b9;
+  transition: background-color 1s;
+}
+
+.icon {
+  font-size: 18px !important;
+}
+
+.card {
+  background-color: white;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 75px;
+
+  border-radius: 12px;
+  border: 2px solid #e8d7b9;
+  background-color: white;
+  box-shadow: 0px 18px 30px 0px rgba(186, 172, 147, 0.11);
+}
+
+#category-p {
+  background-color: #e8d7b9;
+  width: fit-content;
+  border-radius: 15px;
+  padding: 10px 20px;
+
+  font-size: 16px;
+}
